@@ -1,228 +1,191 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Pass Reply</title>
+  <style>
+    :root { --bg:#0b0f19; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#3b82f6; --border:#1f2937; }
+    html,body { height:100%; }
+    body { margin:0; background:radial-gradient(1200px 700px at 80% -10%, #141a28 0%, #0b0f19 60%), #0b0f19; color:var(--text); font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .wrap { max-width:720px; margin:0 auto; padding:24px; }
+    .card { background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.3); backdrop-filter: blur(6px); }
+    h1 { font-size:22px; margin:0 0 12px; }
+    .sub { color:var(--muted); margin:0 0 18px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    input[type="text"], select, textarea { width:100%; padding:12px 14px; background:#0f172a; color:var(--text); border:1px solid var(--border); border-radius:10px; font-size:14px; }
+    textarea { min-height:120px; resize:vertical; }
+    .btn { appearance:none; border:1px solid transparent; background:var(--accent); color:white; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; transition:transform .05s ease, opacity .2s ease; }
+    .btn:hover { opacity:.95; }
+    .btn:active { transform:translateY(1px); }
+    .btn.secondary { background:#374151; }
+    .pill { display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#0f172a; color:var(--muted); font-size:12px; }
+    .footer { color:var(--muted); font-size:12px; margin-top:16px; text-align:center; }
+    .stack { display:grid; gap:10px; }
+    .grid { display:grid; gap:12px; grid-template-columns:1fr; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .reason { background:#0f172a; border:1px dashed #334155; border-radius:12px; padding:14px; white-space:pre-wrap; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .tag { font-size:12px; padding:6px 8px; border-radius:999px; border:1px solid #334155; background:#0b1220; color:#9ca3af; cursor:pointer; user-select:none; }
+    .tag.active { background:#1f2937; color:#e5e7eb; border-color:#475569; }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!-- ======================================================================= --&gt;</p>
-<p class="p1">&lt;!-- FILE 2: pass-landing-page.html <span class="Apple-converted-space">                                          </span>--&gt;</p>
-<p class="p1">&lt;!-- Host this file as /pass.html on your domain. <span class="Apple-converted-space">                            </span>--&gt;</p>
-<p class="p1">&lt;!-- ======================================================================= --&gt;</p>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Quick Pass Reply&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root { --bg:#0b0f19; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#3b82f6; --ok:#22c55e; --border:#1f2937; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html,body { height:100%; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body { margin:0; background:radial-gradient(1200px 700px at 80% -10%, #141a28 0%, #0b0f19 60%), #0b0f19; color:var(--text); font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.wrap { max-width:720px; margin:0 auto; padding:24px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card { background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.3); backdrop-filter: blur(6px); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 { font-size:22px; margin:0 0 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sub { color:var(--muted); margin:0 0 18px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>input[type="text"], select, textarea { width:100%; padding:12px 14px; background:#0f172a; color:var(--text); border:1px solid var(--border); border-radius:10px; font-size:14px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>textarea { min-height:120px; resize:vertical; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn { appearance:none; border:1px solid transparent; background:var(--accent); color:white; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; transition:transform .05s ease, opacity .2s ease; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover { opacity:.95; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:active { transform:translateY(1px); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn.secondary { background:#374151; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.pill { display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#0f172a; color:var(--muted); font-size:12px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer { color:var(--muted); font-size:12px; margin-top:16px; text-align:center; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.stack { display:grid; gap:10px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.grid { display:grid; gap:12px; grid-template-columns:1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.reason { background:#0f172a; border:1px dashed #334155; border-radius:12px; padding:14px; white-space:pre-wrap; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.tags { display:flex; gap:8px; flex-wrap:wrap; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.tag { font-size:12px; padding:6px 8px; border-radius:999px; border:1px solid #334155; background:#0b1220; color:#9ca3af; cursor:pointer; user-select:none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.tag.active { background:#1f2937; color:#e5e7eb; border-color:#475569; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sr { position:absolute; left:-9999px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Thanks for the note — quick pass&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="sub"&gt;Pick a reason below and hit &lt;strong&gt;Send reply&lt;/strong&gt;. This will open your email with a short, courteous response prefilled. No stress, no extra typing.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stack"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Suggested reply&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="reason" class="reason"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" id="shuffle"&gt;Shuffle reason&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn secondary" id="copy"&gt;Copy to clipboard&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tags" id="tags"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="stack"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;label for="extra"&gt;Add a personal note (optional)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea id="extra" placeholder="e.g., Timing is tight on our end, but wishing you the best with the raise."&gt;&lt;/textarea&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" id="send"&gt;Send reply&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn secondary" id="gmail"&gt;Open in Gmail draft&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;small class="sub"&gt;This page doesn’t send anything automatically. It only opens your email with the message filled out to review and send.&lt;/small&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="footer"&gt;Tip: Bookmark this page. You can also pass URL params like &lt;span class="pill"&gt;?to=you@fund.com&amp;name=Alex&amp;company=Acme&amp;from=ceo@acme.com&amp;thread=acme-seed&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// --- Configuration: unique pass reasons (grouped by tag) ---</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const REASONS = [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Stage', text: `Appreciate the outreach. We're currently focused on later-stage opportunities and your round is a bit early for our mandate.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Stage', text: `Thanks for sharing. We're concentrating on post-PMF companies this year, so we'll pass at this time.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Stage', text: `Really interesting. We're not leading pre-seed checks this cycle, so it's outside our focus right now.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Sector fit', text: `We try to stay close to our core themes, and this is a little outside of that focus area for us.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Sector fit', text: `We’re heads down in a few specific theses and this doesn’t align closely enough for us to be helpful.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Sector fit', text: `Cool space, but it’s not a category we’re building an edge in, so we’ll pass gracefully.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Traction', text: `Impressive progress so far. For our process, we’d need a bit more traction to underwrite the round with conviction.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Traction', text: `Encouraging signals, but we’re looking for a longer data arc before leaning in.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Timing', text: `We’re bandwidth constrained with existing portfolio work and can’t engage properly right now.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Timing', text: `We’re midway through several diligences; timing’s tough on our side so we have to pass for now.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Timing', text: `It’s a busy investment committee window for us, so we’re not starting new processes this month.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Valuation', text: `Given today’s market, the round dynamics/valuation are a bit rich for our model.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Valuation', text: `We couldn’t get comfortable with pricing at this stage, so will sit this one out.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Ownership', text: `We target a specific ownership range and this round doesn’t quite fit the structure we need.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Ownership', text: `Allocation looks tight and we likely wouldn’t achieve meaningful ownership here.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Competition', text: `We have exposure in an adjacent area, so we’re avoiding potential conflicts.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Competition', text: `We’re trying to limit overlap with current bets in the space.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Risk/Return', text: `We couldn’t get comfortable with the risk/reward right now, but appreciate the look.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Risk/Return', text: `At our fund size, we need a different risk profile to make the math work.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Product/Market', text: `We’re still unsure about the immediate customer urgency here; we’d like to see more pull from the market.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Product/Market', text: `We love the vision, but we’re not convinced on near-term wedge and distribution yet.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Geo', text: `We’re prioritizing North America this fund; the geography is a bit outside our comfort zone currently.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Geo', text: `We don't have enough local context in this market to underwrite confidently.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Team fit', text: `We typically invest after working closely with teams in our network; we don’t have that context here yet.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Team fit', text: `We couldn’t build enough conviction on founder-market fit this round.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Fund strategy', text: `We’re keeping a tight portfolio concentration this fund and have to be selective beyond our core themes.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Fund strategy', text: `We already have several active diligences this quarter and are limiting new processes.` },</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Follow-up later', text: `Not a fit for us right now, but we’d love to stay close. Please keep us posted on milestones and timing of the next round.` },</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{ tag: 'Follow-up later', text: `We’re going to pass for this round, but would welcome an update after the next 1–2 quarters of progress.` }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Parse URL params for personalization</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const params = new URLSearchParams(location.search);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const YOU = {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>to: params.get('to') || '', // your email</p>
-<p class="p1"><span class="Apple-converted-space">      </span>name: params.get('name') || 'Investor',</p>
-<p class="p1"><span class="Apple-converted-space">      </span>company: params.get('company') || '', // their company</p>
-<p class="p1"><span class="Apple-converted-space">      </span>from: params.get('from') || '', // recipient's email</p>
-<p class="p1"><span class="Apple-converted-space">      </span>thread: params.get('thread') || ''</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Build tag filters</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const TAGS = [...new Set(REASONS.map(r =&gt; r.tag))];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const tagEl = document.getElementById('tags');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const state = { tag: null, idx: 0 };</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>TAGS.forEach(t =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const b = document.createElement('button');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>b.className = 'tag';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>b.type = 'button';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>b.textContent = t;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>b.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (state.tag === t) { state.tag = null; b.classList.remove('active'); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>else { state.tag = t; [...tagEl.children].forEach(ch =&gt; ch.classList.remove('active')); b.classList.add('active'); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>setReason(randomReason());</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">      </span>tagEl.appendChild(b);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const reasonDiv = document.getElementById('reason');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const extraEl = document.getElementById('extra');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function filtered() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return state.tag ? REASONS.filter(r =&gt; r.tag === state.tag) : REASONS;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function randomReason() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const list = filtered();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>state.idx = Math.floor(Math.random() * list.length);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return list[state.idx].text;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function setReason(text) { reasonDiv.textContent = text; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Initialize with a random reason</p>
-<p class="p1"><span class="Apple-converted-space">    </span>setReason(randomReason());</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Shuffle handler</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('shuffle').addEventListener('click', () =&gt; setReason(randomReason()));</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Copy to clipboard</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('copy').addEventListener('click', async () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const text = buildEmailBody();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>try { await navigator.clipboard.writeText(text); alert('Copied to clipboard!'); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>catch { alert('Could not copy. Please select and copy manually.'); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Build email subject/body</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function buildSubject() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const co = YOU.company ? ` on ${YOU.company}` : '';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return `Quick pass${co}`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function buildEmailBody() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const greeting = 'Thanks for reaching out and for sharing the details.';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const reason = reasonDiv.textContent.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const extra = extraEl.value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const sign = `\n\nBest,\n${YOU.name}`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const meta = YOU.thread || YOU.from ? `\n\n—\n(Context: ${[YOU.thread, YOU.from].filter(Boolean).join(' · ')})` : '';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return `${greeting}\n\n${reason}${extra ? `\n\n${extra}` : ''}${sign}${meta}`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function mailtoHref() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const subject = encodeURIComponent(buildSubject());</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const body = encodeURIComponent(buildEmailBody());</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const to = encodeURIComponent(YOU.to || '');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return `mailto:${to}?subject=${subject}&amp;body=${body}`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Send reply via default mail client</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('send').addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!YOU.to) { alert('No recipient email set. Add ?to=you@fund.com to the URL.'); return; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>location.href = mailtoHref();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Open Gmail compose with prefilled content</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('gmail').addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!YOU.to) { alert('No recipient email set. Add ?to=you@fund.com to the URL.'); return; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const subject = encodeURIComponent(buildSubject());</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const body = encodeURIComponent(buildEmailBody());</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const to = encodeURIComponent(YOU.to);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const url = `https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=${to}&amp;su=${subject}&amp;body=${body}`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.open(url, '_blank');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div class="wrap">
+    <div class="card">
+      <h1>Thanks for the note — quick pass</h1>
+      <p class="sub">Pick a reason below and hit <strong>Send reply</strong>. This opens your email with a short, courteous response prefilled.</p>
+
+      <div class="grid">
+        <div class="stack">
+          <label>Suggested reply</label>
+          <div id="reason" class="reason"></div>
+          <div class="row">
+            <button class="btn" id="shuffle" type="button">Shuffle reason</button>
+            <button class="btn secondary" id="copy" type="button">Copy to clipboard</button>
+          </div>
+          <div class="tags" id="tags"></div>
+        </div>
+
+        <div class="stack">
+          <label for="extra">Add a personal note (optional)</label>
+          <textarea id="extra" placeholder="e.g., Timing is tight on our end, but wishing you the best with the raise."></textarea>
+
+          <div class="row">
+            <button class="btn" id="send" type="button">Send reply</button>
+            <button class="btn secondary" id="gmail" type="button">Open in Gmail draft</button>
+          </div>
+
+          <small class="sub">This page doesn’t send anything automatically; it only opens your email with the message filled out.</small>
+        </div>
+      </div>
+
+      <p class="footer">Tip: Add params like <span class="pill">?to=you@fund.com&name=Jacob&company=Acme</span></p>
+    </div>
+  </div>
+
+  <script>
+    const REASONS = [
+      { tag: 'Stage', text: `Appreciate the outreach. We're currently focused on later-stage opportunities and your round is a bit early for our mandate.` },
+      { tag: 'Stage', text: `Thanks for sharing. We're concentrating on post-PMF companies this year, so we'll pass at this time.` },
+      { tag: 'Stage', text: `Really interesting. We're not leading pre-seed checks this cycle, so it's outside our focus right now.` },
+
+      { tag: 'Sector fit', text: `We try to stay close to our core themes, and this is a little outside of that focus area for us.` },
+      { tag: 'Sector fit', text: `We’re heads down in a few specific theses and this doesn’t align closely enough for us to be helpful.` },
+      { tag: 'Sector fit', text: `Cool space, but it’s not a category we’re building an edge in, so we’ll pass gracefully.` },
+
+      { tag: 'Traction', text: `Impressive progress so far. For our process, we’d need a bit more traction to underwrite the round with conviction.` },
+      { tag: 'Traction', text: `Encouraging signals, but we’re looking for a longer data arc before leaning in.` },
+
+      { tag: 'Timing', text: `We’re bandwidth constrained with existing portfolio work and can’t engage properly right now.` },
+      { tag: 'Timing', text: `We’re midway through several diligences; timing’s tough on our side so we have to pass for now.` },
+      { tag: 'Timing', text: `It’s a busy investment committee window for us, so we’re not starting new processes this month.` },
+
+      { tag: 'Valuation', text: `Given today’s market, the round dynamics/valuation are a bit rich for our model.` },
+      { tag: 'Valuation', text: `We couldn’t get comfortable with pricing at this stage, so will sit this one out.` },
+
+      { tag: 'Ownership', text: `We target a specific ownership range and this round doesn’t quite fit the structure we need.` },
+      { tag: 'Ownership', text: `Allocation looks tight and we likely wouldn’t achieve meaningful ownership here.` },
+
+      { tag: 'Competition', text: `We have exposure in an adjacent area, so we’re avoiding potential conflicts.` },
+      { tag: 'Competition', text: `We’re trying to limit overlap with current bets in the space.` },
+
+      { tag: 'Risk/Return', text: `We couldn’t get comfortable with the risk/reward right now, but appreciate the look.` },
+      { tag: 'Risk/Return', text: `At our fund size, we need a different risk profile to make the math work.` },
+
+      { tag: 'Product/Market', text: `We’re still unsure about the immediate customer urgency here; we’d like to see more pull from the market.` },
+      { tag: 'Product/Market', text: `We love the vision, but we’re not convinced on near-term wedge and distribution yet.` },
+
+      { tag: 'Geo', text: `We’re prioritizing North America this fund; the geography is a bit outside our comfort zone currently.` },
+      { tag: 'Geo', text: `We don't have enough local context in this market to underwrite confidently.` },
+
+      { tag: 'Team fit', text: `We typically invest after working closely with teams in our network; we don’t have that context here yet.` },
+      { tag: 'Team fit', text: `We couldn’t build enough conviction on founder-market fit this round.` },
+
+      { tag: 'Fund strategy', text: `We’re keeping a tight portfolio concentration this fund and have to be selective beyond our core themes.` },
+      { tag: 'Fund strategy', text: `We already have several active diligences this quarter and are limiting new processes.` },
+
+      { tag: 'Follow-up later', text: `Not a fit for us right now, but we’d love to stay close. Please keep us posted on milestones and timing of the next round.` },
+      { tag: 'Follow-up later', text: `We’re going to pass for this round, but would welcome an update after the next 1–2 quarters of progress.` }
+    ];
+
+    const params = new URLSearchParams(location.search);
+    const YOU = {
+      to: params.get('to') || '',
+      name: params.get('name') || 'Investor',
+      company: params.get('company') || '',
+      from: params.get('from') || '',
+      thread: params.get('thread') || ''
+    };
+
+    const TAGS = [...new Set(REASONS.map(r => r.tag))];
+    const tagEl = document.getElementById('tags');
+    const state = { tag: null, idx: 0 };
+
+    TAGS.forEach(t => {
+      const b = document.createElement('button');
+      b.className = 'tag';
+      b.type = 'button';
+      b.textContent = t;
+      b.addEventListener('click', () => {
+        if (state.tag === t) { state.tag = null; b.classList.remove('active'); }
+        else { state.tag = t; [...tagEl.children].forEach(ch => ch.classList.remove('active')); b.classList.add('active'); }
+        setReason(randomReason());
+      });
+      tagEl.appendChild(b);
+    });
+
+    const reasonDiv = document.getElementById('reason');
+    const extraEl = document.getElementById('extra');
+
+    function filtered() { return state.tag ? REASONS.filter(r => r.tag === state.tag) : REASONS; }
+    function randomReason() { const list = filtered(); state.idx = Math.floor(Math.random() * list.length); return list[state.idx].text; }
+    function setReason(text) { reasonDiv.textContent = text; }
+
+    setReason(randomReason());
+
+    document.getElementById('shuffle').addEventListener('click', () => setReason(randomReason()));
+
+    document.getElementById('copy').addEventListener('click', async () => {
+      const text = buildEmailBody();
+      try { await navigator.clipboard.writeText(text); alert('Copied to clipboard!'); }
+      catch { alert('Could not copy. Please select and copy manually.'); }
+    });
+
+    function buildSubject() {
+      const co = YOU.company ? ` on ${YOU.company}` : '';
+      return `Quick pass${co}`;
+    }
+
+    function buildEmailBody() {
+      const greeting = 'Thanks for reaching out and for sharing the details.';
+      const reason = reasonDiv.textContent.trim();
+      const extra = extraEl.value.trim();
+      const sign = `\n\nBest,\n${YOU.name}`;
+      const meta = YOU.thread || YOU.from ? `\n\n—\n(Context: ${[YOU.thread, YOU.from].filter(Boolean).join(' · ')})` : '';
+      return `${greeting}\n\n${reason}${extra ? `\n\n${extra}` : ''}${sign}${meta}`;
+    }
+
+    function mailtoHref() {
+      const subject = encodeURIComponent(buildSubject());
+      const body = encodeURIComponent(buildEmailBody());
+      const to = encodeURIComponent(YOU.to || '');
+      return `mailto:${to}?subject=${subject}&body=${body}`;
+    }
+
+    document.getElementById('send').addEventListener('click', () => {
+      if (!YOU.to) { alert('No recipient email set. Add ?to=you@fund.com to the URL.'); return; }
+      location.href = mailtoHref();
+    });
+
+    document.getElementById('gmail').addEventListener('click', () => {
+      if (!YOU.to) { alert('No recipient email set. Add ?to=you@fund.com to the URL.'); return; }
+      const subject = encodeURIComponent(buildSubject());
+      const body = encodeURIComponent(buildEmailBody());
+      const to = encodeURIComponent(YOU.to);
+      const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html>
